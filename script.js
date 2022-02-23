@@ -1,13 +1,3 @@
-// let lines = document.querySelector('.pixel');
-// let numeroDeLinhas = 5;
-// let criandoLinha = numeroDeLinhas ;
-
-// function quadro(pixel) {
-//     for(let index =0; index < lines.length; index +=1) {
-//         Linha(lines[index]);
-//         criandoLinha +=1;
-//     }
-// }
 console.log("teste");
 function quadro() {
     //criando coluna
@@ -27,3 +17,19 @@ function quadro() {
     }
 }
 quadro();
+//cria variavel que puxa o id da paleta
+let selecionaColor = document.querySelector ('#color-palette');
+let cor = "black"
+//cria função pra mudar a cor
+function mudarCor(){
+    //cria um evento de click na paleta
+    selecionaColor.addEventListener('click', function(event){
+        let corSelecionada = document.querySelector('.selected');
+        //encrementos de remover e adcionar evendo verifica no stackoverflow
+        corSelecionada.classList.remove('selected');
+        event.target.classList.add('selected');
+        cor = event.target.id;
+    })
+}
+mudarCor();
+
